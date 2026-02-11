@@ -1,0 +1,30 @@
+# CodeRabbit project guidance for high-signal reviews.
+# Keep review scope on production code and avoid noise from generated assets.
+
+language: "en"
+
+reviews:
+  high_level_summary: true
+  review_status: true
+  collapse_walkthrough: false
+  request_changes_workflow: false
+  auto_review:
+    enabled: true
+    drafts: false
+  path_filters:
+    - "backend/**"
+    - "frontend/**"
+    - "docker-compose.yml"
+    - ".env.example"
+    - "README.md"
+    - "!**/__pycache__/**"
+    - "!**/*.pyc"
+    - "!**/node_modules/**"
+    - "!**/dist/**"
+    - "!**/*.lock"
+
+chat:
+  auto_reply: true
+
+knowledge_base:
+  opt_out: false

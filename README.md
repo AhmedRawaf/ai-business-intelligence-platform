@@ -114,3 +114,28 @@ OpenAPI docs:
 
 - If `OPENAI_API_KEY` is unset, the app uses a deterministic fallback embedding/response mode so the pipeline still works end-to-end.
 - In this scaffold, migrations are auto-generated at container startup (`makemigrations && migrate`) to simplify first-run setup.
+
+## Code Review Workflow (CodeRabbit)
+
+### 1) Install and connect CodeRabbit
+- Install the CodeRabbit GitHub App on this repository.
+- Ensure repository access includes `AhmedRawaf/ai-business-intelligence-platform`.
+
+### 2) Use PR-based review (recommended)
+CodeRabbit reviews PR diffs, so for "whole project" review use a batch strategy:
+
+1. PR A: backend config + auth + orgs
+2. PR B: documents + celery + AI/RAG
+3. PR C: KPI + frontend dashboard/chat/docs/audit
+4. PR D: hardening (tests, security, cleanup)
+
+### 3) Trigger and guide review
+- Open PR and wait for automatic review.
+- Add a comment like `/review` for a fresh pass.
+- Use the PR template in `.github/pull_request_template.md` to focus review on risk-heavy areas.
+
+### 4) Project defaults
+- `.coderabbit.yaml` is preconfigured to:
+  - focus on source code and key config files,
+  - ignore generated/noisy paths,
+  - provide high-level summary + detailed walkthrough status.
